@@ -2,7 +2,7 @@
 
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
-    // html += '<di>' + coffee.id + '</div>';
+    html += '<p>' + coffee.id + '</p>';
     html += '<h3>' + coffee.name + '</h3>';
     html += '<p>' + coffee.roast + '</p>';
     html += '</div>';
@@ -48,7 +48,9 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+// sorts id in ascending order
 coffees.reverse();
+
 
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
@@ -57,3 +59,16 @@ var roastSelection = document.querySelector('#roast-selection');
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+
+
+function nameSearch(){
+    // e.preventDefault();
+    var searchInput = document.getElementById("searchByName").value;
+    var searchMatch = [];
+    coffees.forEach(function(coffee){
+        if (coffee.name.toUpperCase().includes(searchInput.toUpperCase())){
+            searchMatch.push(coffee);
+        }
+    });
+    tbody.innerHTML = renderCoffees(searchMatch);
+}
