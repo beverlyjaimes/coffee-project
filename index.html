@@ -9,26 +9,47 @@
     <h1>Coffee!!</h1>
 
     <form>
+        <!-- search coffees by roast -->
         <label for="roast-selection"></label>
         <select id="roast-selection">
             <option>light</option>
             <option>medium</option>
             <option>dark</option>
         </select>
+        <!-- search coffees by input -->
         <input id="submit" type="submit" />
         <!-- input to search by coffee name  -->
-        <input type="search" id="searchByName" onkeyup="nameSearch()">
-        <!-- you can add a place holder to the search box -->
+        <input type="search" id="searchByName" onkeyup="nameSearch()" placeholder="Search our coffees">
+
+
     </form>
+    <form>
+    <h1> Add a Coffee!</h1>
+        <!-- Add a coffee roast -->
+        <label for="roast-add"></label>
+        <select id="roast-add">
+            <option>light</option>
+            <option>medium</option>
+            <option>dark</option>
+        </select>
+
+        <!-- add coffees by input -->
+        <!-- input to add by coffee name  -->
+        <input type="text" id="addNewName" placeholder="Add a coffee">
+
+        <input id="submitNew" type="submit" />
+
+    </form>
+    
 
     <table>
-        <thead>
+        <!-- <thead>
             <tr>
                 <th>ID</th>
                 <th>NAME</th>
                 <th>ROAST</th>
             </tr>
-        </thead>
+        </thead> -->
         <tbody id="coffees"></tbody>
     </table>
 
